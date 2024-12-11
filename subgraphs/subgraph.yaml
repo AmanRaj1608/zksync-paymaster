@@ -1,0 +1,32 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: ApprovalPaymaster
+    network: zksync-era-sepolia
+    source:
+      address: "0x8cc17e063d6cdF04C78c3430ecb969F45d93c86f"
+      abi: ApprovalPaymaster
+      startBlock: 4303696
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - OwnershipTransferred
+        - PaymasterTransactionCompleted
+        - PaymasterTransactionValidated
+      abis:
+        - name: ApprovalPaymaster
+          file: ./abis/ApprovalPaymaster.json
+      eventHandlers:
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: PaymasterTransactionCompleted(indexed address,bool,uint256)
+          handler: handlePaymasterTransactionCompleted
+        - event: PaymasterTransactionValidated(indexed address,indexed address,uint256,uint256,uint256,uint256)
+          handler: handlePaymasterTransactionValidated
+      file: ./src/approval-paymaster.ts

@@ -1,0 +1,31 @@
+type OwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PaymasterTransactionCompleted @entity(immutable: true) {
+  id: Bytes!
+  user: Bytes! # address
+  success: Boolean! # bool
+  refundedGas: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PaymasterTransactionValidated @entity(immutable: true) {
+  id: Bytes!
+  user: Bytes! # address
+  token: Bytes! # address
+  amount: BigInt! # uint256
+  requiredETH: BigInt! # uint256
+  gasLimit: BigInt! # uint256
+  maxFeePerGas: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

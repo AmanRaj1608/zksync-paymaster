@@ -1,0 +1,30 @@
+$ hardhat deploy-zksync --script deploy.ts
+Deployer EOA: 0x000087F5841e85308F5159595bb1ABf60E150AdB
+
+Starting deployment of "MyERC20Token"...
+Estimated deployment cost: 0.0000235708 ETH
+
+"MyERC20Token" deployed successfully:
+ - Address: 0xD1B36d4935487adA8C7a0ee21d430ade9aB6Dcd0
+ - Source: contracts/erc20/MyERC20Token.sol:MyERC20Token
+ - Encoded constructor args: 0x000000000000000000000000000087f5841e85308f5159595bb1abf60e150adb
+
+ERC20 Token deployed at: 0xD1B36d4935487adA8C7a0ee21d430ade9aB6Dcd0
+Minted 1000000.0 tokens to 0x000087F5841e85308F5159595bb1ABf60E150AdB
+Deployer token balance: 1000000.0
+
+Starting deployment of "ApprovalPaymaster"...
+Estimated deployment cost: 0.0004377374 ETH
+
+"ApprovalPaymaster" deployed successfully:
+ - Address: 0x8cc17e063d6cdF04C78c3430ecb969F45d93c86f
+ - Source: contracts/ApprovalPaymaster.sol:ApprovalPaymaster
+ - Encoded constructor args: 0x000000000000000000000000d1b36d4935487ada8c7a0ee21d430ade9ab6dcd0
+
+ApprovalPaymaster deployed at: 0x8cc17e063d6cdF04C78c3430ecb969F45d93c86f
+
+Deployment Summary:
+-------------------
+ERC20 Token: 0xD1B36d4935487adA8C7a0ee21d430ade9aB6Dcd0
+ApprovalPaymaster: 0x8cc17e063d6cdF04C78c3430ecb969F45d93c86f
+✨  Done in 14.76s.
